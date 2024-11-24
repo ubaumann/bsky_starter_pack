@@ -26,12 +26,15 @@ starterpacks:
     - fatred.bgp4.life
     - scottslowe.bsky.social
     - oswalt.dev
+
+    # name: Bart Dorlandt; X/Twitter: https://x.com/BartOmation linkedin: https://www.linkedin.com/in/bartdorlandt/
     - bartdorlandt.bsky.social
+
     - systemmtuone.bsky.social
     - andreasbaekdahl.bsky.social
     - frank.seesink.com
     - door7302.bsky.social
-    - johncapobianco.bsky.social
+    - automateyournetwork.ca
     - nkallergis.bsky.social
     - rickdonato.bsky.social
     - hey-laura.bsky.social
