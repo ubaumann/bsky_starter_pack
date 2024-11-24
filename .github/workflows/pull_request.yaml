@@ -32,4 +32,4 @@ jobs:
         uses: astral-sh/setup-uv@v3
 
       - name: Run tests
-        run: pytest
+        run: uv run pytest
