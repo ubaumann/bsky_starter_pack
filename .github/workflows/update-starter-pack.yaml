@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  update_sp:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,3 +18,5 @@ jobs:
       
       - name: Update Starter Packs
         run: uv run python src/starterpacks/update_starterpacks.py
+        env:
+          BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
