@@ -2,12 +2,10 @@ import logging
 from typing import Annotated, Dict, List
 
 import typer
-from ruamel.yaml import YAML
-from pydantic import BaseModel, RootModel
-
 from atproto_client import Client, models
 from atproto_identity.resolver import IdResolver
-
+from pydantic import BaseModel, RootModel
+from ruamel.yaml import YAML
 
 logger = logging.getLogger(__name__)
 
@@ -42,13 +40,14 @@ def update_starterpack(
     client = Client()
     client.login(username, password)
     me = client.me
+    bsky_users = "bsky_users.yaml"
 
     starter_packs = client.app.bsky.graph.starterpack.list(me.did)
     existing_service_packs = {
         item.name: item.list for item in starter_packs.records.values()
     }
 
-    for sp_name, user_list in load_users("bsky_users.yaml").starterpacks.items():
+    for sp_name, user_list in load_users(bsky_users).starterpacks.items():
         list_uri = existing_service_packs[sp_name]
 
         sp_list = client.app.bsky.graph.get_list(
@@ -60,7 +59,13 @@ def update_starterpack(
             if new_user.root in sp_list_users:
                 logger.debug("User %s exists in %s", new_user.root, sp_name)
                 continue
+
             new_user_did = IdResolver().handle.resolve(new_user.root)
+            if not new_user_did:
+                logger.error(
+                    f"User {new_user.root} not found. Update the list in {bsky_users}!"
+                )
+                continue
 
             r = client.app.bsky.graph.listitem.create(
                 me.did,
