@@ -13,14 +13,19 @@ logger = logging.getLogger(__name__)
 
 
 class BskyUser(RootModel):
+    """Model for a user in the users.yaml file."""
+
     root: str
 
 
 class UserModel(BaseModel):
+    """Model for the users.yaml file."""
+
     starterpacks: Dict[str, List[BskyUser]]
 
 
 def load_users(user_file: str) -> UserModel:
+    """Load users from a YAML file and validate the data."""
     yaml = YAML(typ="safe")
     with open(user_file) as fp:
         data = yaml.load(fp)
@@ -33,6 +38,7 @@ def update_starterpack(
     ] = "bsky@m.ubaumann.ch",
     password: str = typer.Option(prompt=True, hide_input=True, envvar="BSKY_PASSWORD"),
 ) -> None:
+    """Update the starter packs in the Bsky platform."""
     client = Client()
     client.login(username, password)
     me = client.me
