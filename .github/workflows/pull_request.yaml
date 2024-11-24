@@ -1,5 +1,5 @@
 ---
-name: Update BSKY Starter Packs
+name: Test Project Updates
 
 on: [push, pull_request]
 
