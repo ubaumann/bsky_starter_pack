@@ -1,0 +1,35 @@
+---
+name: Update BSKY Starter Packs
+
+on: [push, pull_request]
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DavidAnson/markdownlint-cli2-action@v18
+        with:
+          globs: '**/*.md'
+
+      - uses: ibiqlik/action-yamllint@v3
+
+      - uses: astral-sh/ruff-action@v1
+        with:
+          changed-files: "true"
+          src: "./src"
+
+      - uses: astral-sh/ruff-action@v1
+        with:
+          changed-files: "true"
+          args: "format --check"
+          src: "./src"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Run tests
+        run: pytest
