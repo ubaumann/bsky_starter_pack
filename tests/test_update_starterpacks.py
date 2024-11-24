@@ -4,6 +4,7 @@ from collections import Counter
 
 
 def test_unique_network_automation_folks():
+    """Test to ensure that all items in the 'Network Automation Folks' starter pack are unique."""
     with open("bsky_users.yaml", "r") as file:
         data = yaml.safe_load(file)
 
