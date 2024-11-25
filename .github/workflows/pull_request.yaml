@@ -17,11 +17,11 @@ jobs:
 
       - uses: ibiqlik/action-yamllint@v3
 
-      - uses: astral-sh/ruff-action@v1
+      - uses: astral-sh/ruff-action@v2
         with:
           src: "./src"
 
-      - uses: astral-sh/ruff-action@v1
+      - uses: astral-sh/ruff-action@v2
         with:
           args: "format --check"
           src: "./src"
