@@ -74,3 +74,5 @@ starterpacks:
     - packetcoders.bsky.social
 
     - steinzi.bsky.social
+    # name: Rafal Rudewicz; X/Twitter: https://x.com/RafalRudewicz; linkedin: https://www.linkedin.com/in/rafalrudewicz/
+    - innasiec.pl
