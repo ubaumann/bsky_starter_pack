@@ -26,7 +26,8 @@ starterpacks:
     - fatred.bgp4.life
     - scottslowe.bsky.social
     - oswalt.dev
-
+    - kazaii626.bsky.social
+    
     # name: Bart Dorlandt; X/Twitter: https://x.com/BartOmation linkedin: https://www.linkedin.com/in/bartdorlandt/
     - dreamnetworking.nl
 
