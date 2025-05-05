@@ -80,6 +80,7 @@ starterpacks:
 
     # name: Anton Zyablov; linkedin: https://www.linkedin.com/in/anton-zyablov
     - ecartman.bsky.social
+    - netcode.rocks
 
   "Cisco Champions":
     - ciscochampion.bsky.social
