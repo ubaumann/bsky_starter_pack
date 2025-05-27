@@ -33,7 +33,10 @@ starterpacks:
     - dreamnetworking.nl
 
     - systemmtuone.bsky.social
-    - andreasbaekdahl.bsky.social
+
+    # name: Andreas Baekdahl; linkedin: https://www.linkedin.com/in/andreasbaekdahl/
+    - ccie-automation.com
+    
     - frank.seesink.com
     - door7302.bsky.social
     - automateyournetwork.ca
@@ -121,3 +124,6 @@ starterpacks:
     - bridgeisroot.bsky.social
     - netengmike.bsky.social
     - milestone42.bsky.social
+
+    # name: Andreas Baekdahl; linkedin: https://www.linkedin.com/in/andreasbaekdahl/
+    - ccie-automation.com
